@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+ Test template
+{% for x in fruits reversed %}
+    <h1> 
+        {{forloop.counter0}}  {{forloop.first}} {{forloop.revcounter}} {{x}}
+    </h1>
+    {% empty %}
+    <h1>  No members </h1>
+{% endfor %}
+
+{% for x in allmembers%}
+    <hr>
+    {{x.id}}, {{x.firstname}}, {{x.lastname}}
+    <hr>
+{% endfor %}
+
+<table border='2'>
+    {% for x in names %}
+    <tr>
+        <td>
+            {{x}}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<table border='2'>
+    
+    <tr>
+        <td>
+           {{names}}
+        </td>
+    </tr>
+    
+</table>
+
+
+{% with balls=10 %}
+    <h3> 
+        {{balls}},current time {% now "Y-m-d" %}
+    </h3>
+{% endwith %}
+<!-- With block provides a way to create temporary variables,
+    but they exist within that block only.
+    Remember there should be no space between x=y. So x = y is invalid.
+          -->
+
+
+</body>
+</html>

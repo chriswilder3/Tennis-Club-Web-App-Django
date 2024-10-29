@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+{% block title %}
+    Details of a member
+{% endblock %}
+
+{% block content %}
+    <div class='membershow'>
+    <h1> Member Details : {{mymember.firstname}} {{mymember.lastname}}</h1>
+    
+    <p> Phone : {{mymember.phone}}</p>
+    <p> Joined since : {{mymember.datejoined}}</p>
+
+    <p> <a href="/members">Members</a> </p> 
+    {% comment %}
+
+    Relative vs Absolute URLs
+
+    Relative URLs: These are URLs relative to the current page. 
+    For example, members/ (without the leading /) will be interpreted by
+     the browser relative to the current page's path.
+    If you're on /members/details/1, the browser will interpret 
+    members/ as /members/details/members/ — which is incorrect and 
+    will likely result in a 404 error (page not found).
+    
+    Absolute URLs: These are URLs that start from the root of your
+     website. An absolute URL starts with /. 
+     So, /members/ will be interpreted as http://yourdomain.com/members/, 
+     which is the correct path to your "Members" page.
+   
+    {% endcomment %}
+    </div>
+{% endblock %}

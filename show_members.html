@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+
+{% block title%}
+
+    My Tennis club members
+
+{% endblock%}
+
+{% block content %}
+
+    <div class='membershow'>
+        <h1> 
+            Members
+        </h1>
+
+        <!-- Template tags are used for control flow (loops, conditionals)
+            and other template-level actions ( including other templates, 
+            using template filters, etc 
+            -->
+
+        <!-- Template variables are used to output data. 
+            They are placeholders for values that will be replaced by 
+            actual content (such as variables passed from views). 
+            -->
+        <ul>
+            {% for x in mymembers %}
+
+                <li> <a href="details/{{ x.id }}"> {{ x.firstname }} {{ x.lastname }} </a> </li>
+
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
